@@ -15,8 +15,8 @@ Wish you had quicker access to your draft posts and pages? Tired of having to cl
 == Installation ==
 
 1. Download the plugin archive and expand it (you've likely already done this).
-2. Put the 'twitter-tools.php' file into your wp-content/plugins/ directory.
-3. Go to the Plugins page in your WordPress Administration area and click 'Activate' for Twitter Tools.
+2. Put the 'drafts-dropdown.php' file into your wp-content/plugins/ directory.
+3. Go to the Plugins page in your WordPress Administration area and click 'Activate' for Drafts Dropdown.
 
 == Frequently Asked Questions ==
 
