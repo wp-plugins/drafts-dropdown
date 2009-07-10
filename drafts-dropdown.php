@@ -3,7 +3,7 @@
 Plugin Name: Drafts Dropdown 
 Plugin URI: http://alexking.org/projects/wordpress 
 Description: Easy access to your WordPress drafts from within the web admin interface. Drafts are listed in a drop-down menu. 
-Version: 1.0dev 
+Version: 1.0
 Author: Crowd Favorite
 Author URI: http://crowdfavorite.com
 */
@@ -15,12 +15,6 @@ load_plugin_textdomain('draft-dropdown');
 function cfdd_get_drafts() {
 	$drafts = new WP_Query('post_type=post&post_status=draft&posts_per_page=100&order=DESC&orderby=modified');
 	return $drafts->posts;
-// Testing code
-// 	$temp = array();
-// 	for ($i = 0; $i < 19; $i++) {
-// 		$temp[] = $drafts->posts[0];
-// 	}
-// 	return $temp;
 }
 
 function screen_meta_drafts_content() {
@@ -41,6 +35,16 @@ function screen_meta_drafts_content() {
 
 function cfdd_admin_footer() {
 ?>
+<style type="text/css">
+.cfdd_col {
+	float: left;
+	margin-right: 20px;
+}
+.cfdd_clear {
+	clear: both;
+	float: none;
+}
+</style>
 <script type="text/javascript">
 jQuery(function($) {
 	var copy = $('#contextual-help-wrap');
@@ -50,12 +54,13 @@ jQuery(function($) {
 	});
 	var drafts = $('#cfdd_drafts li');
 	var drafts_count = drafts.size();
+	var i = 0;
 	if (drafts_count <= 10) {
 // set to 2 columns
 		$('#screen-meta-drafts-wrap .screen-meta-content').append('<div class="cfdd_col" id="cfdd_col_1"><ul></ul></div><div class="cfdd_col" id="cfdd_col_2"><ul></ul></div><div class="cfdd_clear"></div>');
-		var i = 0;
+		var col_count = Math.ceil(drafts_count / 2);
 		drafts.each(function() {
-			i < ((drafts_count + 1) / 2) ? target = '#cfdd_col_1 ul' : target = '#cfdd_col_2 ul';
+			i < col_count ? target = '#cfdd_col_1 ul' : target = '#cfdd_col_2 ul';
 			$(this).appendTo(target);
 			i++;
 		});
@@ -63,7 +68,6 @@ jQuery(function($) {
 	else {
 // 3 columns
 		$('#screen-meta-drafts-wrap .screen-meta-content').append('<div class="cfdd_col" id="cfdd_col_1"><ul></ul></div><div class="cfdd_col" id="cfdd_col_2"><ul></ul></div><div class="cfdd_col" id="cfdd_col_3"><ul></ul></div><div class="cfdd_clear"></div>');
-		var i = 0;
 		var col_count = Math.ceil(drafts_count / 3);
 		drafts.each(function() {
 			if (i < col_count) {
@@ -81,7 +85,7 @@ jQuery(function($) {
 	}
 	$('#cfdd_drafts').remove();
 // set size of cfdd_col
-	$('.cfdd_col').width(Math.floor($('#wpbody-content').width() - 100) / 3);
+	$('.cfdd_col').width(Math.floor($('#wpbody-content').width() - 160) / 3);
 });
 </script>
 <?php
