@@ -8,7 +8,7 @@ Author: Crowd Favorite
 Author URI: http://crowdfavorite.com
 */
 
-// Copyright (c) 2006-2010 
+// Copyright (c) 2009-2010 
 //   Crowd Favorite, Ltd. - http://crowdfavorite.com
 //   Alex King - http://alexking.org
 // All rights reserved.
