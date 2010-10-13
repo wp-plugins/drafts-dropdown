@@ -171,7 +171,7 @@ $screen_meta = array(
 <style type="text/css">
 .screen-meta-toggle {
 	float: right;
-	background: #e3e3e3 url( <?php echo esc_url(admin_url('images/screen-options-left.gif')) ?> ) no-repeat 0 0;
+	background: #e3e3e3 url( <?php echo admin_url('images/screen-options-left.gif'); ?> ) no-repeat 0 0;
 	font-family: "Lucida Grande", Verdana, Arial, "Bitstream Vera Sans", sans-serif;
 	height: 22px;
 	padding: 0;
@@ -238,4 +238,7 @@ jQuery(function($) {
 add_action('admin_footer', 'screen_meta_output');
 
 }
+
+//a:22:{s:11:"plugin_name";s:15:"Drafts Dropdown";s:10:"plugin_uri";s:38:"http://alexking.org/projects/wordpress";s:18:"plugin_description";s:112:"Easy access to your WordPress drafts from within the web admin interface. Drafts are listed in a drop-down menu.";s:14:"plugin_version";s:3:"1.0";s:6:"prefix";s:4:"cfdd";s:12:"localization";s:14:"draft-dropdown";s:14:"settings_title";N;s:13:"settings_link";N;s:4:"init";b:0;s:7:"install";b:0;s:9:"post_edit";b:0;s:12:"comment_edit";b:0;s:6:"jquery";b:0;s:6:"wp_css";b:0;s:5:"wp_js";b:0;s:9:"admin_css";b:0;s:8:"admin_js";s:1:"1";s:15:"request_handler";b:0;s:6:"snoopy";b:0;s:11:"setting_cat";b:0;s:14:"setting_author";b:0;s:11:"custom_urls";b:0;}
+
 ?>
