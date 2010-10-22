@@ -1,4 +1,5 @@
 <?php
+
 /*
 Plugin Name: Drafts Dropdown 
 Plugin URI: http://crowdfavorite.com/wordpress/plugins/drafts-dropdown/ 
@@ -28,8 +29,20 @@ Author URI: http://crowdfavorite.com
 
 load_plugin_textdomain('drafts-dropdown');
 
-function cfdd_get_drafts() {
-	$drafts = new WP_Query('post_type=post&post_status=draft&posts_per_page=100&order=DESC&orderby=modified');
+function cfdd_get_drafts() {	
+	$args = array(
+	  'public' => true,
+	);
+	$post_types = get_post_types($args, 'names');
+	$query = array( 
+		'post_type' => $post_types, 
+		'post_status' => 'draft',
+		'posts_per_page' => 100,
+		'order' => 'DESC',
+		'orderby' => 'modified'
+		);
+	
+	$drafts = new WP_Query($query);
 	return $drafts->posts;
 }
 
@@ -112,7 +125,7 @@ add_action('admin_footer', 'cfdd_admin_footer');
 function cfdd_screen_meta($screen_meta) {
 	$screen_meta[] = array(
 		'key' => 'drafts',
-		'label' => 'Drafts',
+		'label' => __('Drafts', 'drafts-dropdown'),
 		'content' => 'screen_meta_drafts_content'
 	);
 
