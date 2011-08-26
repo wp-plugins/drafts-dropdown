@@ -1,12 +1,11 @@
 === Drafts Dropdown ===
 Contributors: alexkingorg, crowdfavorite
-Donate link: http://alexking.org/donate/
 Tags: draft, drafts, post, admin, access, shortcut
-Requires at least: 2.8
-Tested up to: 2.8.1
-Stable tag: 1.0
+Requires at least: 3.2
+Tested up to: 3.2.1
+Stable tag: 2.0
 
-Adds a Drafts tab to the admin interface so that you can quickly access your draft blog posts.
+Adds a Drafts tab to the admin bar so that you can quickly access your draft blog posts.
 
 == Description ==
 
@@ -20,7 +19,11 @@ Wish you had quicker access to your draft posts and pages? Tired of having to cl
 
 == Frequently Asked Questions ==
 
-= Does this work on versions of WordPress prior to 2.8? =
+= Does Drafts Dropdown require the use of the Admin Bar? =
+
+Yes.
+
+= Does this work on versions of WordPress prior to 3.2? =
 
 Perhaps - however it has not been tested.
 
@@ -31,11 +34,17 @@ Perhaps - however it has not been tested.
 
 == Changelog ==
 
+= 2.0 =
+* Now attaches to the Admin Bar
+* Available on front-end of site
+* Drafts are loaded in via AJAX to improve performance
+* Updated styling
+
 = 1.0 =
 * First public release.
 
 == Developers ==
 
-The code to add this tab and show the dropdown area (or drawer) has been generalized and should be easily used by other plugins. Also attached as a core patch to Trac:
+This plugin is now actively developed in GitHub. Fork it and contribute:
 
-http://core.trac.wordpress.org/attachment/ticket/9657/screen-meta-sample-code.txt
+https://github.com/crowdfavorite/wp-drafts-dropdown
